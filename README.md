@@ -59,21 +59,33 @@ Antes de iniciar, certifique-se de ter instalado em sua máquina:
 Clone o repositório para a sua máquina local:
 
 ``bash
+
 git clone https://github.com/pertodomato/PineBankHackaton.git
+
 cd PineBankHackaton
 
 2. Configurar Variáveis de Ambiente
+   
 Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
+
 JWT_SECRET=SeuSegredoJWTAqui
+
 OPENAI_API_KEY=SuaChaveAPIOpenAIAqui
+
 GEMINI_API_KEY=SuaChaveAPIGeminiAqui
+
 MONGODB_URI=mongodb://localhost:27017/pinebankdb
+
 REDIS_CONNECTION=localhost:6379
+
 LLM_PROVIDER=openai
+
 CURRENCY_API_BASE=https://economia.awesomeapi.com.br
+
 IG_PAGE_ACCESS_TOKEN=SeuTokenDeAcessoInstagramAqui
 
-4. Rodar os Serviços com Docker
+
+3. Rodar os Serviços com Docker
 Para facilitar a configuração do MongoDB e Redis, utilize o Docker Compose fornecido:
 
 docker-compose -f docker-compose.local.yml up -d
@@ -91,7 +103,7 @@ Navegue até o diretório do front-end e instale as dependências:
 cd ../../pinebank-web
 npm install
 
-7. Executando a Aplicação
+Executando a Aplicação
    
 5.1. Executando a API (.NET)
 
