@@ -134,36 +134,69 @@ npm run dev
 Utilize o script teste.txt no PowerShell para autenticar e testar a API:
 
 7. Estrutura do Projeto
+   
 PineBankHackaton/
+
 ├── src/
+
 │   ├── PineBank.API/
+
 │   │   ├── Controllers/
+
 │   │   ├── Models/
+
 │   │   ├── Services/
+
 │   │   ├── Program.cs
+
 │   │   └── PineBank.API.csproj
+
 │   ├── PineBank.Application/
+
 │   │   ├── DTOs/
+
 │   │   ├── Interfaces/
+
 │   │   ├── Features/
+
 │   │   └── PineBank.Application.csproj
+
 │   └── PineBank.Domain/
+
 │       ├── Entities/
+
 │       ├── Interfaces/
+
 │       └── PineBank.Domain.csproj
+
 ├── pinebank-web/
+
 │   ├── assets/
+
 │   ├── components/
+
 │   ├── pages/
+
 │   ├── plugins/
+
 │   ├── public/
+
 │   ├── .nuxt/
+
 │   ├── nuxt.config.ts
+
 │   ├── package.json
+
 │   ├── README.md
+
 │   └── tsconfig.json
+
 ├── docker-compose.local.yml
+
 ├── .env
+
 ├── .gitignore
+
 ├── README.md
+
 └── requirements.txt
