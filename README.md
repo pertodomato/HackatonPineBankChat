@@ -101,6 +101,7 @@ dotnet restore
 Navegue até o diretório do front-end e instale as dependências:
 
 cd ../../pinebank-web
+
 npm install
 
 Executando a Aplicação
@@ -109,16 +110,25 @@ Executando a Aplicação
 
 No terminal, navegue até o diretório da API e execute:
 
+
 cd src/PineBank.API
+
 dotnet build
+
 dotnet run
+
+
 A API estará acessível em http://localhost:5204.
 
 5.2. Executando o Front-end (Nuxt 3)
 
 Em outro terminal, navegue até o diretório do front-end e execute:
+
 cd pinebank-web
+
 npm run dev
+
+
 6. Testando a API no terminal
 Utilize o script PowerShell fornecido para autenticar e testar a API:
 # Cria o corpo da requisição de autenticação
