@@ -15,7 +15,7 @@ O **PineBank Hackaton** é uma solução inovadora desenvolvida para otimizar o 
   
 - **Gestão de Conversas:** Armazena o histórico de conversas no MongoDB, permitindo manter o contexto e fornecer respostas mais precisas com base nas interações anteriores.
   
-- **Escalonamento para Atendimento Humano:** Em casos de dúvidas complexas ou solicitações fora do escopo financeiro, o sistema encaminha a interação para um atendente humano, garantindo um atendimento completo e satisfatório.
+- **Escalonamento para Atendimento Humano:** Em casos de dúvidas complexas ou solicitações fora do escopo financeiro, o sistema encaminha a interação para um atendente humano, garantindo um atendimento completo e satisfatório, por enquanto é só o json que decide, mas da para implementar uma api que deixa um humano assumir a conversa.
   
 - **Integração com Instagram Webhook:** Permite a recepção e envio de mensagens através do Instagram, ampliando os canais de atendimento ao cliente.
 
