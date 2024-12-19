@@ -1,0 +1,65 @@
+# Create the authentication request body
+$authBody = @{
+    username = "admin"
+    password = "password"
+} | ConvertTo-Json
+
+Write-Host "1. Attempting authentication..."
+try {
+    $authResponse = Invoke-RestMethod -Uri "http://localhost:5204/api/Auth/login" `
+                                    -Method Post `
+                                    -ContentType "application/json" `
+                                    -Body $authBody `
+                                    -ErrorVariable responseError
+
+    Write-Host "Authentication successful!"
+    Write-Host "Token received: $($authResponse.token.Substring(0, 20))..."
+
+    # Set up headers with the token
+    $headers = @{
+        "Authorization" = "Bearer $($authResponse.token)"
+        "Content-Type" = "application/json"
+    }
+
+    Write-Host "`n2. Testing general chat..."
+    $chatBody = @{
+        message = "Eu queria fazer uma viagem e tenho e quero comprar 100euros, quantos reais eu preciso?"
+        userId = "test-user"
+    } | ConvertTo-Json
+
+    $response = Invoke-RestMethod -Uri "http://localhost:5204/api/Chat" `
+                                -Method Post `
+                                -Headers $headers `
+                                -Body $chatBody
+
+    Write-Host "Chat response received:"
+    $response | ConvertTo-Json -Depth 10
+
+    Write-Host "`n3. Testing exchange rate query..."
+    $exchangeBody = @{
+        message = "Eu queria fazer uma viagem e tenho 100 reais pra comprar euros, isso da quantos euros? Me passe um contrato para eu fazer essa transacao"
+        userId = "test-user"
+    } | ConvertTo-Json
+
+    $exchangeResponse = Invoke-RestMethod -Uri "http://localhost:5204/api/Chat" `
+                                        -Method Post `
+                                        -Headers $headers `
+                                        -Body $exchangeBody
+
+    Write-Host "Exchange rate response received:"
+    $exchangeResponse | ConvertTo-Json -Depth 10
+
+} catch {
+    Write-Host "Error occurred:"
+    Write-Host $_.Exception.Message
+    Write-Host "Response Status Code:" $_.Exception.Response.StatusCode.value__
+    Write-Host "Response Status Description:" $_.Exception.Response.StatusDescription
+    
+    # Try to get more error details if available
+    try {
+        $errorDetails = $_.ErrorDetails.Message | ConvertFrom-Json
+        Write-Host "Error Details:" $errorDetails
+    } catch {
+        Write-Host "No additional error details available"
+    }
+}

@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: pinebank-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      - MONGODB_DATABASE=pinebankdb
+    command: ["mongod", "--port", "27017", "--bind_ip", "0.0.0.0", "--noauth"]
+
+  redis:
+    image: redis:7.0
+    container_name: pinebank-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  mongo-data:
+  redis-data:

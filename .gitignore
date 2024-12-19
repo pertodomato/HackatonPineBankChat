@@ -1,0 +1,12 @@
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar diretórios de build
+bin/
+obj/
+
+# Ignorar logs
+*.log
+
+# Ignorar dependências do Node.js
+node_modules/
