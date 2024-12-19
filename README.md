@@ -129,6 +129,7 @@ cd pinebank-web
 
 npm run dev
 
+O frontend estará aqui: http://localhost:3002/
 Após isso ja da pra entrar no site e usar o chatbot, pergunta coisas de contrato ou cambio pra testar as apis dele.
 
 6. Testando a API no terminal
