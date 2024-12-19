@@ -130,72 +130,9 @@ npm run dev
 
 
 6. Testando a API no terminal
-Utilize o script PowerShell fornecido para autenticar e testar a API:
-# Cria o corpo da requisição de autenticação
-$authBody = @{
-    username = "admin"
-    password = "password"
-} | ConvertTo-Json
+   
+Utilize o script teste.txt no PowerShell para autenticar e testar a API:
 
-Write-Host "1. Tentando autenticação..."
-try {
-    $authResponse = Invoke-RestMethod -Uri "http://localhost:5204/api/Auth/login" `
-                                    -Method Post `
-                                    -ContentType "application/json" `
-                                    -Body $authBody `
-                                    -ErrorVariable responseError
-
-    Write-Host "Autenticação bem-sucedida!"
-    Write-Host "Token recebido: $($authResponse.token.Substring(0, 20))..."
-
-    # Configura os headers com o token
-    $headers = @{
-        "Authorization" = "Bearer $($authResponse.token)"
-        "Content-Type" = "application/json"
-    }
-
-    Write-Host "`n2. Testando chat geral..."
-    $chatBody = @{
-        message = "Eu queria fazer uma viagem e quero comprar 100 euros, quantos reais eu preciso?"
-        userId = "test-user"
-    } | ConvertTo-Json
-
-    $response = Invoke-RestMethod -Uri "http://localhost:5204/api/Chat" `
-                                -Method Post `
-                                -Headers $headers `
-                                -Body $chatBody
-
-    Write-Host "Resposta do chat recebida:"
-    $response | ConvertTo-Json -Depth 10
-
-    Write-Host "`n3. Testando consulta de câmbio..."
-    $exchangeBody = @{
-        message = "Eu queria fazer uma viagem e tenho 100 reais pra comprar euros, isso da quantos euros? Me passe um contrato para eu fazer essa transacao"
-        userId = "test-user"
-    } | ConvertTo-Json
-
-    $exchangeResponse = Invoke-RestMethod -Uri "http://localhost:5204/api/Chat" `
-                                        -Method Post `
-                                        -Headers $headers `
-                                        -Body $exchangeBody
-
-    Write-Host "Resposta da consulta de câmbio recebida:"
-    $exchangeResponse | ConvertTo-Json -Depth 10
-
-} catch {
-    Write-Host "Ocorreu um erro:"
-    Write-Host $_.Exception.Message
-    Write-Host "Código de Status da Resposta:" $_.Exception.Response.StatusCode.value__
-    Write-Host "Descrição do Status da Resposta:" $_.Exception.Response.StatusDescription
-    
-    # Tenta obter mais detalhes do erro, se disponíveis
-    try {
-        $errorDetails = $_.ErrorDetails.Message | ConvertFrom-Json
-        Write-Host "Detalhes do Erro:" $errorDetails
-    } catch {
-        Write-Host "Nenhum detalhe adicional do erro disponível"
-    }
-} 
 7. Estrutura do Projeto
 PineBankHackaton/
 ├── src/
