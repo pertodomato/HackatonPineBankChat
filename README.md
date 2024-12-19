@@ -75,6 +75,7 @@ IG_PAGE_ACCESS_TOKEN=SeuTokenDeAcessoInstagramAqui
 
 4. Rodar os Serviços com Docker
 Para facilitar a configuração do MongoDB e Redis, utilize o Docker Compose fornecido:
+
 docker-compose -f docker-compose.local.yml up -d
 
 
