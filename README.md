@@ -17,7 +17,7 @@ O **PineBank Hackaton** é uma solução inovadora desenvolvida para otimizar o 
   
 - **Escalonamento para Atendimento Humano:** Em casos de dúvidas complexas ou solicitações fora do escopo financeiro, o sistema encaminha a interação para um atendente humano, garantindo um atendimento completo e satisfatório, por enquanto é só o json que decide, mas da para implementar uma api que deixa um humano assumir a conversa.
   
-- **Integração com Instagram Webhook:** Permite a recepção e envio de mensagens através do Instagram, ampliando os canais de atendimento ao cliente.
+- **Integração com Instagram Webhook:** Permite a recepção e envio de mensagens através do Instagram, ampliando os canais de atendimento ao cliente, não deu tempo nem recursos para implementar, precisava de uma ferramenta que nao estava funcionando direitona versão gratis, a ferramenta é a ngrok.
 
 ## 🛠 Tecnologias Utilizadas
 
@@ -50,7 +50,7 @@ Antes de iniciar, certifique-se de ter instalado em sua máquina:
 - **Node.js** e **npm**. [Download Node.js](https://nodejs.org/)
 - **Docker** (para rodar MongoDB e Redis). [Download Docker](https://www.docker.com/get-started)
 - **Chave de API da OpenAI**.
-- **Chave de API da Gemini** (se aplicável).
+- **Chave de API da Gemini** (nao implementei o gemni, tem que usar a chave da openai mesmo, eu mandei a minha pro alan da poli junior, pede pra ele).
 
 ## 🏗️ Instalação e Configuração
 
