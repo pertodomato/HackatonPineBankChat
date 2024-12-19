@@ -28,7 +28,7 @@ O **PineBank Hackaton** é uma solução inovadora desenvolvida para otimizar o 
 - **MediatR:** Implementação do padrão CQRS para separar responsabilidades de comandos e consultas.
 - **MongoDB:** Banco de dados NoSQL para armazenamento eficiente das conversas e mensagens.
 - **JWT (JSON Web Tokens):** Para autenticação e autorização seguras.
-- **OpenAI:** Integração com modelos de linguagem para gerar respostas contextuais e inteligentes.
+- **OpenAI:** Integração com modelos de linguagem para gerar respostas contextuais e inteligentes.(obs nao deu tempo de integrar o gemini tbm)
 - **Redis:** Utilizado para caching, melhorando a performance das respostas.
 
 ### Front-end:
