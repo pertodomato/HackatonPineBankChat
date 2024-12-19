@@ -1,7 +1,6 @@
 # PineBank Hackaton – Assistente Virtual Bancário Integrado
 
 
-
 ## 📖 Descrição Geral
 
 O **PineBank Hackaton** é uma solução inovadora desenvolvida para otimizar o atendimento ao cliente em ambientes bancários através de um assistente virtual inteligente. Este projeto integra um back-end robusto desenvolvido em .NET com um front-end dinâmico utilizando Nuxt 3 e Vuetify, proporcionando uma experiência de usuário fluida e eficiente. O sistema foi projetado para responder a consultas financeiras, fornecer cotações de câmbio em tempo real e facilitar a realização de contratos de câmbio, tudo isso enquanto mantém a capacidade de escalar o atendimento para um agente humano quando necessário.
@@ -78,9 +77,6 @@ docker-compose -f docker-compose.local.yml up -d
 4. Instalando Dependências
 4.1. Back-end (.NET API)
 Navegue até o diretório do back-end e restaure as dependências:
-
-
-
 cd src/PineBank.API
 dotnet restore
 4.2. Front-end (Nuxt 3)
@@ -101,8 +97,6 @@ cd pinebank-web
 npm run dev
 6. Testando a API no terminal
 Utilize o script PowerShell fornecido para autenticar e testar a API:
-
-powershell
 # Cria o corpo da requisição de autenticação
 $authBody = @{
     username = "admin"
@@ -128,7 +122,7 @@ try {
 
     Write-Host "`n2. Testando chat geral..."
     $chatBody = @{
-        message = "Eu queria fazer uma viagem e tenho e quero comprar 100 euros, quantos reais eu preciso?"
+        message = "Eu queria fazer uma viagem e quero comprar 100 euros, quantos reais eu preciso?"
         userId = "test-user"
     } | ConvertTo-Json
 
@@ -142,7 +136,7 @@ try {
 
     Write-Host "`n3. Testando consulta de câmbio..."
     $exchangeBody = @{
-        message = "Eu queria fazer uma viagem e tenho 100 reais pra comprar euros, isso da quantos euros? Me passe um contrato para eu fazer essa transação"
+        message = "Eu queria fazer uma viagem e tenho 100 reais pra comprar euros, isso da quantos euros? Me passe um contrato para eu fazer essa transacao"
         userId = "test-user"
     } | ConvertTo-Json
 
