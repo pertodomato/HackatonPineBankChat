@@ -61,6 +61,7 @@ Clone o repositório para a sua máquina local:
 ``bash
 git clone https://github.com/pertodomato/PineBankHackaton.git
 cd PineBankHackaton
+
 2. Configurar Variáveis de Ambiente
 Crie um arquivo .env na raiz do projeto com as seguintes variáveis:
 JWT_SECRET=SeuSegredoJWTAqui
@@ -71,27 +72,37 @@ REDIS_CONNECTION=localhost:6379
 LLM_PROVIDER=openai
 CURRENCY_API_BASE=https://economia.awesomeapi.com.br
 IG_PAGE_ACCESS_TOKEN=SeuTokenDeAcessoInstagramAqui
-3. Rodar os Serviços com Docker
+
+4. Rodar os Serviços com Docker
 Para facilitar a configuração do MongoDB e Redis, utilize o Docker Compose fornecido:
 docker-compose -f docker-compose.local.yml up -d
-4. Instalando Dependências
+
+
 4.1. Back-end (.NET API)
 Navegue até o diretório do back-end e restaure as dependências:
+
 cd src/PineBank.API
 dotnet restore
+
 4.2. Front-end (Nuxt 3)
 Navegue até o diretório do front-end e instale as dependências:
+
 cd ../../pinebank-web
 npm install
-5. Executando a Aplicação
+
+7. Executando a Aplicação
+   
 5.1. Executando a API (.NET)
+
 No terminal, navegue até o diretório da API e execute:
+
 cd src/PineBank.API
 dotnet build
 dotnet run
 A API estará acessível em http://localhost:5204.
 
 5.2. Executando o Front-end (Nuxt 3)
+
 Em outro terminal, navegue até o diretório do front-end e execute:
 cd pinebank-web
 npm run dev
